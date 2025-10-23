@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nonprofit Pricing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #333;
+    }
+
+    section {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      padding-bottom: 20px;
+      margin-bottom: 40px;
+    }
+
+    figure {
+      text-align: left;
+      padding: 20px;
+    }
+
+    figure img {
+      max-width: 200px;
+      height: auto;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 20px;
+      border-bottom: 2px solid #eee;
+      text-align: center;
+      gap: 10px;
+    }
+
+    article {
+      padding: 15px;
+    }
+
+    article h2 {
+      font-size: 18px;
+      margin: 10px 0 5px;
+      color: #333;
+    }
+
+    article p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    article button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    article button:hover {
+      background: #0056b3;
+    }
+
+    article a {
+      display: block;
+      font-size: 13px;
+      margin-top: 8px;
+      color: #007bff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    article a:hover {
+      text-decoration: underline;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #eee;
+      padding: 12px;
+    }
+
+    th {
+      background: #f2f4f8;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    td:first-child {
+      text-align: left;
+      font-weight: bold;
+    }
+
+    /* Modal */
+    section[id="infoModal"] {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    section[id="infoModal"] article {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    span {
+      float: right;
+      font-size: 18px;
+      cursor: pointer;
+      color: red;
+    }
+
+    /* Login page */
+    section[id="loginPage"] {
+      display: none;
+      margin: 50px auto;
+      width: 300px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    section[id="loginPage"] h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    section[id="loginPage"] input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    section[id="loginPage"] button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    section[id="loginPage"] button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simple nonprofit pricing</h1>
+
+  <section id="pricingSection">
+    <figure>
+      <img src="img.jpg.png" alt="Pricing Illustration">
+    </figure>
+
+    <header>
+      <article>
+        <h2>GoFundMe</h2>
+        <p>Quick and easy online crowdfunding</p>
+        <button onclick="openLogin()">Get Started</button>
+        <a onclick="openModal('GoFundMe helps individuals raise funds quickly and easily for any cause.')">Learn more</a>
+      </article>
+
+      <article>
+        <h2>Essential</h2>
+        <p>All the basics for event & team crowdfunding</p>
+        <button onclick="openLogin()">Get Started</button>
+        <a onclick="openModal('Essential includes team crowdfunding, donor data, and more.')">Learn more</a>
+      </article>
+
+      <article>
+        <h2>Premium</h2>
+        <p>Everything you need to grow your nonprofit</p>
+        <button onclick="showContact()">Contact Us</button>
+        <a onclick="openModal('Premium gives advanced donor data, event management, and lower fees.')">Learn more</a>
+      </article>
+
+      <article>
+        <h2>Enterprise</h2>
+        <p>Advanced features for scaling your nonprofit</p>
+        <button onclick="showContact()">Contact Us</button>
+        <a onclick="openModal('Enterprise plan offers customized features and dedicated support.')">Learn more</a>
+      </article>
+    </header>
+
+    <!-- Pricing Table -->
+    <table>
+      <tr>
+        <th>Pricing</th>
+        <td>GoFundMe</td>
+        <td>Essential</td>
+        <td>Premium</td>
+        <td>Enterprise</td>
+      </tr>
+      <tr>
+        <td>Plan cost</td>
+        <td>Free</td>
+        <td>Free</td>
+        <td><a href="#">Contact us</a></td>
+        <td><a href="#">Contact us</a></td>
+      </tr>
+      <tr>
+        <td>Platform fee</td>
+        <td>0%</td>
+        <td>5%</td>
+        <td>3%</td>
+        <td><a href="#">Contact us</a></td>
+      </tr>
+      <tr>
+        <td>Payment processing</td>
+        <td>2.9% + 30¢</td>
+        <td>2.9% + 30¢</td>
+        <td>2.4% + 30¢</td>
+        <td><a href="#">Contact us</a></td>
+      </tr>
+    </table>
+
+    <!-- Features Table -->
+    <table>
+      <tr>
+        <th>Features</th>
+        <td>GoFundMe</td>
+        <td>Essential</td>
+        <td>Premium</td>
+        <td>Enterprise</td>
+      </tr>
+      <tr>
+        <td>Basic donor data</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+      </tr>
+      <tr>
+        <td>Advanced donor data</td>
+        <td>✖</td>
+        <td>✖</td>
+        <td>✔</td>
+        <td>✔</td>
+      </tr>
+      <tr>
+        <td>Event fundraising</td>
+        <td>✖</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+      </tr>
+      <tr>
+        <td>Peer-to-peer campaigns</td>
+        <td>✖</td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+      </tr>
+      <tr>
+        <td>Dedicated support</td>
+        <td>✖</td>
+        <td>✖</td>
+        <td>✖</td>
+        <td>✔</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="loginPage">
+    <h2>Login</h2>
+    <form>
+      <input type="text" placeholder="User ID" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+  <section id="infoModal">
+    <article>
+      <span onclick="closeModal()">&times;</span>
+      <p id="modalText"></p>
+    </article>
+  </section>
+
+  <script>
+    function openModal(info) {
+      document.getElementById('modalText').innerText = info;
+      document.getElementById('infoModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('infoModal').style.display = 'none';
+    }
+
+    function openLogin() {
+      document.getElementById('pricingSection').style.display = 'none';
+      document.getElementById('loginPage').style.display = 'block';
+    }
+
+    function showContact() {
+      openModal("📧 Email: support@nonprofit.org\n📞 Phone: +1 (800) 123-4567");
+    }
+  </script>
+</body>
+</html>

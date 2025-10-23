@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    section {
+      display: flex;
+      gap: 20px;
+      text-align: center;
+    }
+
+    article {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 30px 20px;
+      width: 280px;
+      min-height: 480px; /* 🔹 Increased frame length */
+      transition: transform 0.3s ease, min-height 0.3s ease;
+    }
+
+    article:hover {
+      transform: translateY(-8px);
+    }
+
+    header {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    small {
+      display: block;
+      font-size: 14px;
+      color: gray;
+      margin-bottom: 20px;
+    }
+
+    strong {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    strong span {
+      font-size: 18px;
+      color: #333;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      color: #444;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    button {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 25px;
+      border: none;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      color: #fff;
+    }
+
+    /* Button colors */
+    article:nth-child(1) button { background: #6c5ce7; }
+    article:nth-child(1) button:hover { background: #5a4cd1; }
+
+    article:nth-child(2) button { background: #ff6b6b; }
+    article:nth-child(2) button:hover { background: #e85c5c; }
+
+    article:nth-child(3) button { background: #4b4b83; }
+    article:nth-child(3) button:hover { background: #393966; }
+
+    /* Price colors */
+    article:nth-child(1) strong { color: #6c5ce7; }
+    article:nth-child(2) strong { color: #ff6b6b; }
+    article:nth-child(3) strong { color: #4b4b83; }
+
+    /* Hidden info */
+    p {
+      display: none;
+      font-size: 13px;
+      color: #333;
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    article.show p {
+      display: block;
+    }
+
+    /* Extra height when expanded */
+    article.show {
+      min-height: 540px; /* 🔹 Taller when showing details */
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <!-- Personal -->
+    <article>
+      <header>Personal</header>
+      <small>We Think Ahead</small>
+      <strong>$29 <span>/month</span></strong>
+      <ul>
+        <li>Mobile-Optimized</li>
+        <li>Free Custom Domain</li>
+        <li>Best Web Hosting</li>
+        <li>Outstanding Support Team</li>
+        <li>Our Happy Customers</li>
+      </ul>
+      <button onclick="toggleInfo(this)">READ MORE</button>
+      <p>This plan is best for individuals who need a simple, reliable, and cost-effective hosting solution with essential features.</p>
+    </article>
+
+    <!-- Business -->
+    <article>
+      <header>Business</header>
+      <small>Special Offer</small>
+      <strong>$38 <span>/month</span></strong>
+      <ul>
+        <li>Mobile-Optimized</li>
+        <li>Free Custom Domain</li>
+        <li>Best Web Hosting</li>
+        <li>Outstanding Support Team</li>
+        <li>Our Happy Customers</li>
+      </ul>
+      <button onclick="toggleInfo(this)">READ MORE</button>
+      <p>Ideal for startups and growing businesses. Includes extra performance optimization, analytics, and marketing tools.</p>
+    </article>
+
+    <!-- Enterprise -->
+    <article>
+      <header>Enterprise</header>
+      <small>Our Best Solution</small>
+      <strong>$75 <span>/month</span></strong>
+      <ul>
+        <li>Mobile-Optimized</li>
+        <li>Free Custom Domain</li>
+        <li>Best Web Hosting</li>
+        <li>Outstanding Support Team</li>
+        <li>Our Happy Customers</li>
+      </ul>
+      <button onclick="toggleInfo(this)">READ MORE</button>
+      <p>Designed for large organizations needing maximum scalability, security, and dedicated premium customer support.</p>
+    </article>
+  </section>
+
+  <script>
+    function toggleInfo(button) {
+      let card = button.parentElement;
+      card.classList.toggle("show");
+
+      if (card.classList.contains("show")) {
+        button.textContent = "READ LESS";
+      } else {
+        button.textContent = "READ MORE";
+      }
+    }
+  </script>
+</body>
+</html>

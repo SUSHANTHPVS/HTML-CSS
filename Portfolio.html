@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - P.V. Sushanth</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    /* Left column */
+    .sidebar {
+      flex: 1 1 300px;
+      background: #1a73e8;
+      color: #fff;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .sidebar img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin-bottom: 20px;
+      object-fit: cover;
+    }
+
+    .sidebar h1 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .sidebar p {
+      font-size: 14px;
+      margin: 5px 0 15px;
+    }
+
+    .contact-links a {
+      display: block;
+      margin: 8px 0;
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Right column */
+    .main-content {
+      flex: 2 1 600px;
+      padding: 30px;
+    }
+
+    h2 {
+      font-size: 20px;
+      color: #1a73e8;
+      border-bottom: 2px solid #1a73e8;
+      padding-bottom: 5px;
+      margin-top: 20px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    p, li {
+      font-size: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background: #f0f0f0;
+    }
+
+    ul, ol {
+      margin: 10px 0 0 20px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .sidebar {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <img src="sushanth.jpg.jpeg" alt="Profile Photo">
+      <h1>P.V. Sushanth</h1>
+      <p>Computer Science Engineering Student</p>
+      <div class="contact-links">
+        <a href="mailto:pvsushanthpv@gmail.com">📧 pvsushanthpv@gmail.com</a>
+        <a href="https://www.linkedin.com/in/sushanth-p-v-67290a31b/" target="_blank">🔗 LinkedIn</a>
+        <a href="https://github.com/SUSHANTHPVS" target="_blank">💻 GitHub</a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <h2>Career Goal</h2>
+      <p>
+        I am a Computer Science Engineering student with a passion for coding, technology, 
+        and maintaining a balanced lifestyle. Along with academic excellence, I actively engage 
+        in fitness activities, which I believe contribute to a healthy mind and improved productivity.
+      </p>
+
+      <h2>Academic Background</h2>
+      <table>
+        <tr>
+          <th>Year</th>
+          <th>Institution</th>
+          <th>Qualification</th>
+          <th>GPA</th>
+        </tr>
+        <tr>
+          <td>2023</td>
+          <td>MBU</td>
+          <td>B.Tech (CSE)</td>
+          <td>9.3</td>
+        </tr>
+        <tr>
+          <td>2021 - 2023</td>
+          <td>Sri Chaitanya</td>
+          <td>MPC</td>
+          <td>9.4</td>
+        </tr>
+      </table>
+
+      <h2>Skills</h2>
+      <h3>Technical Skills</h3>
+      <ul>
+        <li>Programming: Python, Java, C++, JavaScript</li>
+        <li>Web Development: HTML, CSS, React.js, Node.js</li>
+        <li>Databases: MySQL</li>
+      </ul>
+
+      <h3>Soft Skills</h3>
+      <ul>
+        <li>Problem Solving</li>
+        <li>Time Management</li>
+        <li>Communication</li>
+        <li>Leadership</li>
+        <li>Team Collaboration</li>
+        <li>Adaptability</li>
+      </ul>
+
+      <h2>Certifications</h2>
+      <ol>
+        <li>Google IT Support Professional Certificate – Coursera (2024)</li>
+        <li>Responsive Web Design – freeCodeCamp (2022)</li>
+      </ol>
+
+      <h2>Extracurricular Activities</h2>
+      <ol>
+        <li>Singing</li>
+        <li>Reading Novels</li>
+      </ol>
+
+      <h2>Projects</h2>
+      <ul>
+        <li><b>FitLife</b> – Your Personal Fitness Companion</li>
+        <li><b>Virtual Piano</b> – Interactive online piano app</li>
+        <li><b>Traffic Management System</b> – Smart city traffic optimization</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

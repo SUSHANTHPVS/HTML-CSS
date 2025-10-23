@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Enrollment Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background: #fff;
+      border: 2px solid #333;
+      border-radius: 10px;
+      padding: 25px;
+      width: 400px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    label {
+      display: inline-block;
+      width: 120px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: calc(100% - 130px);
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    fieldset {
+      border: 2px solid #333;
+      border-radius: 6px;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    legend {
+      font-weight: bold;
+    }
+
+    .checkbox-group,
+    .radio-group {
+      margin-left: 20px;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .submit-btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <form action="">
+      <h1>Course Enrollment Form</h1>
+      <p><small>Required Fields are followed by *</small></p>
+
+      <p>
+        <label for="name">Student Name*:</label>
+        <input type="text" name="name" id="name" required>
+      </p>
+
+      <p>
+        <label for="roll">Roll No*:</label>
+        <input type="text" name="roll" id="roll" required>
+      </p>
+
+      <fieldset>
+        <legend>Gender*</legend>
+        <div class="radio-group">
+          <label><input type="radio" name="gender" value="Male" required> Male</label><br>
+          <label><input type="radio" name="gender" value="Female"> Female</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Course Selection</legend>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="course" value="QAVA"> QAVA</label><br>
+          <label><input type="checkbox" name="course" value="CP"> CP</label><br>
+          <label><input type="checkbox" name="course" value="JAVA"> JAVA</label>
+        </div>
+      </fieldset>
+
+      <p>
+        <label for="email">Email*:</label>
+        <input type="email" id="email" required>
+      </p>
+
+      <fieldset>
+        <legend>Mode of Study</legend>
+        <div class="radio-group">
+          <label><input type="radio" name="mode" value="ONLINE"> Online</label><br>
+          <label><input type="radio" name="mode" value="OFFLINE"> Offline</label>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

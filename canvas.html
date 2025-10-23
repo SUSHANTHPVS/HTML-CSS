@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CANVAS</title>
+</head>
+<body>
+    <h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: grey;" >
+        <u>CANVAS TO INCLUDE DIFFERENT 2D OBJECTS</u>
+    </h1>
+
+    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
+
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+
+        
+        ctx.moveTo(0, 0);
+        ctx.lineTo(500, 500);
+        ctx.strokeStyle = "red";
+        ctx.stroke();
+
+        
+        ctx.beginPath();
+        ctx.arc(200, 100, 40, 0, 2 * Math.PI);
+        ctx.strokeStyle = "purple";
+        ctx.stroke();
+
+        
+        ctx.font = "30px Verdana";
+        ctx.fillStyle = "gold";
+        ctx.fillText("SUSHANTH P V", 50, 50);
+        ctx.fill();
+
+        
+        ctx.fillStyle = "blue";
+        ctx.fillRect(300, 200, 150, 100);  
+        
+
+    </script>
+</body>
+</html>

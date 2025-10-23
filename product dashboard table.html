@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product Dashboard Table</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #1c2b3a;
+        color: white;
+    }
+    header {
+        background: #2196F3;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header img {
+        height: 40px;
+    }
+    nav {
+        background: #2f3b4c;
+        display: flex;
+        justify-content: space-around;
+        padding: 12px;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        position: relative;
+    }
+    nav a:hover {
+        background: #394a5a;
+        border-radius: 5px;
+    }
+    section {
+        padding: 20px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: #263544;
+    }
+    th, td {
+        border: 1px solid #3d4e61;
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background: #34495e;
+    }
+    caption {
+        text-align: left;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    /* Popup styles */
+    .popup {
+        display: none;
+        position: absolute;
+        top: 50px;
+        background: #2e3c50;
+        color: #fff;
+        padding: 15px;
+        border-radius: 6px;
+        width: 220px;
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.4);
+        z-index: 10;
+    }
+    .popup h4 {
+        margin: 0 0 8px 0;
+        font-size: 16px;
+        color: #4fc3f7;
+    }
+    .popup p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <img src="https://dummyimage.com/60x40/2196F3/ffffff&text=IQ" alt="Logo">
+    <span>Virgil Pana ⚙️</span>
+</header>
+
+<nav>
+    <a onclick="showPopup(event,'Dashboard Info')">Dashboard</a>
+    <a onclick="showPopup(event,'Manage Users and Accounts')">Users</a>
+    <a onclick="showPopup(event,'Set and Track Priorities')">Priority</a>
+    <a onclick="showPopup(event,'View Collections')">Collections</a>
+    <a onclick="showPopup(event,'See Archived Items')">Archived</a>
+    <a onclick="showPopup(event,'Deleted Items Section')">Deleted</a>
+    <a onclick="showPopup(event,'Trends and Analytics')">Trends</a>
+    <a onclick="showPopup(event,'Assigned Tasks')">Tasks</a>
+    <a onclick="showPopup(event,'Filter Options')">Filters</a>
+    <a onclick="showPopup(event,'Statistics Dashboard')">Stats</a>
+</nav>
+
+<!-- Popup -->
+<aside id="popup" class="popup"></aside>
+
+<section>
+    <!-- March -->
+    <table>
+        <caption>March 2014</caption>
+        <tr>
+            <th>Customer</th><th>Company</th><th>Contact</th><th>Address</th>
+            <th>Revenue</th><th>VAT</th><th>Total Price</th><th>Status</th>
+        </tr>
+        <tr><td>IBBP Apps</td><td>H&R Real</td><td>Joshua O’</td><td>276 Tremont Street, Boston, MA</td><td>$420,930</td><td>$12,834</td><td>$1,240,390</td><td>FINISHED</td></tr>
+        <tr><td>SRA Contacts</td><td>Great West</td><td>Eli Ahmad</td><td>1310 Mission Street, San Francisco</td><td>$312,840</td><td>$7,040</td><td>$312,840</td><td>WAITING</td></tr>
+        <tr><td>SoftMedia</td><td>Linked Ltd</td><td>Maria White</td><td>400 Castro St, Mountain View</td><td>$210,490</td><td>$6,340</td><td>$500,000</td><td>IN PROGRESS</td></tr>
+    </table>
+
+    <!-- April -->
+    <table>
+        <caption>April 2014</caption>
+        <tr>
+            <th>Customer</th><th>Company</th><th>Contact</th><th>Address</th>
+            <th>Revenue</th><th>VAT</th><th>Total Price</th><th>Status</th>
+        </tr>
+        <tr><td>Accupure</td><td>Manulife F</td><td>Manu Acu</td><td>1072 Folsom St, San Francisco</td><td>$232,849</td><td>$4,983</td><td>$112,483</td><td>FINISHED</td></tr>
+        <tr><td>NextTech</td><td>ZoomIt</td><td>Kevin Lee</td><td>987 Pine St, Seattle</td><td>$148,230</td><td>$3,780</td><td>$294,000</td><td>WAITING</td></tr>
+    </table>
+
+    <!-- May -->
+    <table>
+        <caption>May 2014</caption>
+        <tr>
+            <th>Customer</th><th>Company</th><th>Contact</th><th>Address</th>
+            <th>Revenue</th><th>VAT</th><th>Total Price</th><th>Status</th>
+        </tr>
+        <tr><td>BrightApps</td><td>MetaSoft</td><td>Anna Smith</td><td>88 King St, San Diego</td><td>$310,920</td><td>$8,900</td><td>$430,000</td><td>FINISHED</td></tr>
+        <tr><td>SkyNet</td><td>GlobalNet</td><td>Sam Wilson</td><td>12 Wall St, NY</td><td>$720,000</td><td>$20,000</td><td>$950,000</td><td>IN PROGRESS</td></tr>
+    </table>
+
+    <!-- June -->
+    <table>
+        <caption>June 2014</caption>
+        <tr>
+            <th>Customer</th><th>Company</th><th>Contact</th><th>Address</th>
+            <th>Revenue</th><th>VAT</th><th>Total Price</th><th>Status</th>
+        </tr>
+        <tr><td>Starline</td><td>NextMedia</td><td>Chris Paul</td><td>24 Main St, Austin</td><td>$187,900</td><td>$4,300</td><td>$290,000</td><td>WAITING</td></tr>
+        <tr><td>Infocorp</td><td>TrueSoft</td><td>Mark Hall</td><td>1800 S Ave, Dallas</td><td>$290,000</td><td>$9,000</td><td>$500,000</td><td>FINISHED</td></tr>
+    </table>
+
+    <!-- July -->
+    <table>
+        <caption>July 2014</caption>
+        <tr>
+            <th>Customer</th><th>Company</th><th>Contact</th><th>Address</th>
+            <th>Revenue</th><th>VAT</th><th>Total Price</th><th>Status</th>
+        </tr>
+        <tr><td>BlueApps</td><td>Skyware</td><td>Nina Brown</td><td>99 Central St, Miami</td><td>$390,400</td><td>$11,200</td><td>$600,000</td><td>IN PROGRESS</td></tr>
+        <tr><td>AlphaTech</td><td>CodeWorks</td><td>Steve Kim</td><td>85 Market St, Chicago</td><td>$250,300</td><td>$6,500</td><td>$420,000</td><td>FINISHED</td></tr>
+    </table>
+
+    <!-- August -->
+    <table>
+        <caption>August 2014</caption>
+        <tr>
+            <th>Customer</th><th>Company</th><th>Contact</th><th>Address</th>
+            <th>Revenue</th><th>VAT</th><th>Total Price</th><th>Status</th>
+        </tr>
+        <tr><td>SoftLine</td><td>FutureWorks</td><td>Emma Davis</td><td>66 Bridge St, LA</td><td>$512,600</td><td>$15,000</td><td>$780,000</td><td>WAITING</td></tr>
+        <tr><td>CodeNova</td><td>AppWorks</td><td>Daniel Clark</td><td>21 High St, Boston</td><td>$198,000</td><td>$4,200</td><td>$250,000</td><td>FINISHED</td></tr>
+    </table>
+</section>
+
+<script>
+    const popup = document.getElementById("popup");
+
+    function showPopup(event, text) {
+        popup.innerHTML = "<h4>Info</h4><p>" + text + "</p>";
+        popup.style.display = "block";
+        popup.style.left = event.target.offsetLeft + "px";
+        popup.style.top = (event.target.offsetTop + 40) + "px";
+    }
+
+    // Hide popup when clicking outside
+    document.addEventListener("click", function(e) {
+        if (!e.target.closest("nav a")) {
+            popup.style.display = "none";
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Form</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4;">
+
+  <h2 style="text-align:center; color: #333;">Survey Form</h2>
+
+  <form style="max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ccc; background-color: #fff;">
+
+    <!-- Full Name -->
+    <label for="name">Full Name:</label><br>
+    <input type="text" id="name" name="name" placeholder="Enter your name" 
+           style="width:100%; padding:8px; margin:8px 0;" required><br>
+
+    <!-- Date of Birth -->
+    <label for="dob">Date of Birth:</label><br>
+    <input type="date" id="dob" name="dob" 
+           style="width:100%; padding:8px; margin:8px 0;" required><br>
+
+    <!-- Place -->
+    <label for="place">Place:</label><br>
+    <input type="text" id="place" name="place" placeholder="Enter your place" 
+           style="width:100%; padding:8px; margin:8px 0;" required><br>
+
+    <!-- Email -->
+    <label for="email">Email Address:</label><br>
+    <input type="email" id="email" name="email" placeholder="Enter your email" 
+           style="width:100%; padding:8px; margin:8px 0;" required><br>
+
+    <!-- Age -->
+    <label for="age">Age:</label><br>
+    <input type="number" id="age" name="age" placeholder="Enter your age" min="10" max="100" 
+           style="width:100%; padding:8px; margin:8px 0;" required><br>
+
+    <!-- Gender -->
+    <label>Gender:</label><br>
+    <input type="radio" id="male" name="gender" value="Male" required>
+    <label for="male">Male</label><br>
+
+    <input type="radio" id="female" name="gender" value="Female">
+    <label for="female">Female</label><br>
+
+    <input type="radio" id="other" name="gender" value="Other">
+    <label for="other">Other</label><br><br>
+
+    <!-- Rating -->
+    <label>How would you rate our service?</label><br>
+    <select name="rating" id="rating" style="width:100%; padding:8px; margin:8px 0;" required>
+      <option value="">--Select--</option>
+      <option value="Excellent">Excellent</option>
+      <option value="Good">Good</option>
+      <option value="Average">Average</option>
+      <option value="Poor">Poor</option>
+    </select><br>
+
+    <!-- Feedback -->
+    <label for="feedback">Your Feedback:</label><br>
+    <textarea id="feedback" name="feedback" rows="4" placeholder="Enter your feedback here..." 
+              style="width:100%; padding:8px; margin:8px 0;" required></textarea><br>
+
+    <!-- Buttons -->
+    <input type="submit" value="Submit" 
+           style="background-color:#4CAF50; color:white; padding:10px 20px; border:none; cursor:pointer;">
+    
+    <input type="reset" value="Clear" 
+           style="background-color:#f44336; color:white; padding:10px 20px; border:none; cursor:pointer; margin-left:10px;">
+
+  </form>
+</body>
+</html>

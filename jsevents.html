@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Events Showcase</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+      background: #f4f4f9;
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    #hoverBox {
+      width: 200px;
+      height: 100px;
+      margin: 20px auto;
+      background: tomato;
+      line-height: 100px;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+    input, select, textarea {
+      padding: 8px;
+      margin: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    #output {
+      margin-top: 20px;
+      font-weight: bold;
+      color: darkblue;
+    }
+  </style>
+</head>
+<body onload="pageLoaded()">
+
+  <h1>✨ JavaScript Events Demo Page ✨</h1>
+
+  <!-- Onclick event -->
+  <button onclick="alert('You clicked the button!')">Click Me</button>
+
+  <!-- Ondblclick event -->
+  <button ondblclick="alert('You double-clicked me!')">Double Click Me</button>
+
+  <!-- Onmouseover & onmouseout -->
+  <div id="hoverBox" 
+       onmouseover="this.style.background='green'" 
+       onmouseout="this.style.background='tomato'">
+       Hover Over Me
+  </div>
+
+  <!-- Onchange event -->
+  <label for="colorSelect">Choose background color: </label>
+  <select id="colorSelect" onchange="changeBackground(this)">
+    <option value="">--Select--</option>
+    <option value="lightblue">Light Blue</option>
+    <option value="lightgreen">Light Green</option>
+    <option value="lavender">Lavender</option>
+  </select>
+
+  <br>
+
+  <!-- Onkeydown event -->
+  <input type="text" placeholder="Type something..." onkeydown="showKey(event)">
+  
+  <!-- Onfocus & onblur -->
+  <input type="text" placeholder="Focus on me" 
+         onfocus="this.style.background='lightyellow'" 
+         onblur="this.style.background='white'">
+
+  <br>
+
+  <!-- Oninput event -->
+  <textarea rows="3" cols="30" placeholder="Start typing..." oninput="liveUpdate(this)"></textarea>
+
+  <p id="output"></p>
+
+  <script>
+    // Onload event
+    function pageLoaded() {
+      alert("Welcome! The page is fully loaded 🎉");
+    }
+
+    // Onchange event
+    function changeBackground(selectObj) {
+      document.body.style.backgroundColor = selectObj.value;
+    }
+
+    // Onkeydown event
+    function showKey(event) {
+      document.getElementById("output").innerText = 
+        "Key pressed: " + event.key;
+    }
+
+    // Oninput event
+    function liveUpdate(textarea) {
+      document.getElementById("output").innerText = 
+        "Live typing: " + textarea.value;
+    }
+  </script>
+
+</body>
+</html>

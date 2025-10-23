@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pricing Table (fixed ticks)</title>
+  <style>
+    :root{
+      --green-dark: #56a90d;
+      --green-mid: #7ecf33;
+      --green-light: #f9fff2;
+      --label-green-1: #a7e45c;
+      --label-green-2: #7ecf33;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f5f5;
+      margin: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .pricing-table {
+      width: 100%;
+      max-width: 1050px;
+      border-collapse: collapse;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+      padding: 14px 18px;
+      border: 1px solid #e6e6e6;
+      font-size: 15px;
+    }
+
+    /* top headers */
+    .pricing-table thead th:first-child { background: transparent; border: none; }
+    .pricing-table thead th{
+      background: linear-gradient(180deg, var(--green-mid), var(--green-dark));
+      color: #fff;
+      text-transform: none;
+      font-weight: 600;
+      font-size: 17px;
+      text-align: center;
+    }
+
+    /* left label column */
+    .feature {
+      text-align: left;
+      background: linear-gradient(180deg, var(--label-green-1), var(--label-green-2));
+      color: #fff;
+      font-weight: 700;
+      width: 230px;
+    }
+
+    /* alternate lighter rows for readability */
+    .pricing-table tbody tr td:not(.feature) {
+      background: #fbfff8;
+    }
+
+    /* check/tick styling */
+    .tick {
+      color: #2ea83a;
+      font-weight: 700;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    /* price row */
+    .price-row td {
+      background: #fff;
+      color: #2d8f0f;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    /* small screens */
+    @media (max-width: 720px){
+      .pricing-table, .pricing-table thead, .pricing-table tbody, .pricing-table th, .pricing-table td, .pricing-table tr {
+        display: block;
+      }
+      .pricing-table thead tr { display: none; }
+      .pricing-table tr { margin-bottom: 12px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; }
+      .pricing-table td.feature { background: linear-gradient(180deg, var(--label-green-1), var(--label-green-2)); color: #fff; }
+      .pricing-table td { border: none; display: flex; justify-content: space-between; padding: 10px 14px; }
+      .price-row td { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <table class="pricing-table" role="table" aria-label="Pricing table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Smart Starter</th>
+        <th scope="col">Smart Medium</th>
+        <th scope="col">Smart Business</th>
+        <th scope="col">Smart Deluxe</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td class="feature">Storage Space</td>
+        <td>512 MB</td>
+        <td>1 GB</td>
+        <td>2 GB</td>
+        <td>4 GB</td>
+      </tr>
+
+      <tr>
+        <td class="feature">Bandwidth</td>
+        <td>50 GB</td>
+        <td>100 GB</td>
+        <td>150 GB</td>
+        <td>Unlimited</td>
+      </tr>
+
+      <tr>
+        <td class="feature">MySQL Databases</td>
+        <td>Unlimited</td>
+        <td>Unlimited</td>
+        <td>Unlimited</td>
+        <td>Unlimited</td>
+      </tr>
+
+      <tr>
+        <td class="feature">Setup</td>
+        <td>19.90 $</td>
+        <td>12.90 $</td>
+        <td>Free</td>
+        <td>Free</td>
+      </tr>
+
+      <tr>
+        <td class="feature">PHP 5</td>
+        <td class="tick" aria-label="PHP 5 available">✔</td>
+        <td class="tick" aria-label="PHP 5 available">✔</td>
+        <td class="tick" aria-label="PHP 5 available">✔</td>
+        <td class="tick" aria-label="PHP 5 available">✔</td>
+      </tr>
+
+      <tr>
+        <td class="feature">Ruby on Rails</td>
+        <td class="tick" aria-label="Ruby on Rails available">✔</td>
+        <td class="tick" aria-label="Ruby on Rails available">✔</td> <!-- <-- missing tick fixed -->
+        <td class="tick" aria-label="Ruby on Rails available">✔</td>
+        <td class="tick" aria-label="Ruby on Rails available">✔</td>
+      </tr>
+
+      <tr class="price-row">
+        <td class="feature">Price per month</td>
+        <td>$ 2.90</td>
+        <td>$ 5.90</td>
+        <td>$ 9.90</td>
+        <td>$ 14.90</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

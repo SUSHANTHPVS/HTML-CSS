@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Management</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1b1e34;
+      color: white;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #2c2f48;
+    }
+    tr:nth-child(even) {
+      background-color: #2a2d44;
+    }
+    tr:nth-child(odd) {
+      background-color: #242741;
+    }
+    .star {
+      color: gold;
+      font-size: 18px;
+    }
+    a {
+      color: #00c8ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .edit-btn {
+      background: #007bff;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+    }
+    .delete-btn {
+      background: #dc3545;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+    }
+    .create-btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    form {
+      margin-top: 20px;
+      background: #2c2f48;
+      padding: 15px;
+      border: 1px solid #444;
+      display: none;
+    }
+    label {
+      display: block;
+      margin-top: 8px;
+    }
+    input {
+      width: 98%;
+      padding: 6px;
+      margin-top: 4px;
+    }
+    .submit-btn {
+      margin-top: 12px;
+      padding: 8px 16px;
+      background: #17a2b8;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Product Management</h2>
+  <p>Click on a product title for more details:</p>
+
+  <button class="create-btn" onclick="showForm()">+ Create Product</button>
+
+  <!-- Product Table -->
+  <table id="productTable">
+    <tr>
+      <td>1</td>
+      <td><img src="trainers.jpg" alt="Trainers" height="60px" width="130px"></td>
+      <td><a href="trainers.html">Trainers</a></td>
+      <td>Trainers in White</td>
+      <td>76</td>
+      <td><span class="star">★</span> 4.6</td>
+      <td><button class="edit-btn" onclick="editRow(this)">Edit</button> <button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><img src="boots.jpg" alt="Boots" height="70px" width="130px"></td>
+      <td><a href="boots.html">Boots</a></td>
+      <td>Leather Boots</td>
+      <td>95</td>
+      <td><span class="star">★</span> 4.5</td>
+      <td><button class="edit-btn" onclick="editRow(this)">Edit</button> <button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><img src="heels.jpg" alt="Heels" height="60px" width="130px"></td>
+      <td><a href="heels.html">Heels</a></td>
+      <td>Elegant Red Heels</td>
+      <td>120</td>
+      <td><span class="star">★</span> 4.8</td>
+      <td><button class="edit-btn" onclick="editRow(this)">Edit</button> <button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><img src="sandals.jpg" alt="Sandals" height="60px" width="130px"></td>
+      <td><a href="sandals.html">Sandals</a></td>
+      <td>Beach Sandals</td>
+      <td>35</td>
+      <td><span class="star">★</span> 4.2</td>
+      <td><button class="edit-btn" onclick="editRow(this)">Edit</button> <button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><img src="jackets.jpg" alt="Jackets" height="60px" width="130px"></td>
+      <td><a href="jackets.html">Jackets</a></td>
+      <td>Winter Jacket</td>
+      <td>150</td>
+      <td><span class="star">★</span> 4.7</td>
+      <td><button class="edit-btn" onclick="editRow(this)">Edit</button> <button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><img src="watch.jpg" alt="Watches" height="60px" width="130px"></td>
+      <td><a href="watches.html">Watches</a></td>
+      <td>Luxury Watch</td>
+      <td>300</td>
+      <td><span class="star">★</span> 4.9</td>
+      <td><button class="edit-btn" onclick="editRow(this)">Edit</button> <button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><img src="bag.jpg" alt="Bags" height="60px" width="130px"></td>
+      <td><a href="bags.html">Bags</a></td>
+      <td>Leather Bag</td>
+      <td>85</td>
+      <td><span class="star">★</span> 4.4</td>
+      <td><button class="edit-btn" onclick="editRow(this)">Edit</button> <button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><img src="sunglasses.jpg" alt="Sunglasses" height="60px" width="130px"></td>
+      <td><a href="sunglasses.html">Sunglasses</a></td>
+      <td>Polarized Shades</td>
+      <td>50</td>
+      <td><span class="star">★</span> 4.3</td>
+      <td><button class="edit-btn" onclick="editRow(this)">Edit</button> <button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+  </table>
+
+  <!-- Hidden Form for New Product -->
+  <form id="productForm" onsubmit="addProduct(event)">
+    <h3>Create New Product</h3>
+    <label>Image URL: <input type="text" id="image"></label>
+    <label>Title: <input type="text" id="title"></label>
+    <label>Subtitle: <input type="text" id="subtitle"></label>
+    <label>Price ($): <input type="number" id="price"></label>
+    <label>Rating: <input type="number" step="0.1" max="5" min="1" id="rating"></label>
+    <button type="submit" class="submit-btn">Add Product</button>
+  </form>
+
+  <script>
+    let productId = 9; // Continue after existing products
+
+    function showForm() {
+      document.getElementById("productForm").style.display = "block";
+    }
+
+    function addProduct(event) {
+      event.preventDefault();
+
+      let image = document.getElementById("image").value || "https://via.placeholder.com/60";
+      let title = document.getElementById("title").value;
+      let subtitle = document.getElementById("subtitle").value;
+      let price = document.getElementById("price").value;
+      let rating = document.getElementById("rating").value;
+
+      let table = document.getElementById("productTable");
+      let row = table.insertRow(-1);
+
+      row.innerHTML = `
+        <td>${productId}</td>
+        <td><img src="${image}" alt="${title}" width="60"></td>
+        <td><a href="${title.toLowerCase()}.html">${title}</a></td>
+        <td>${subtitle}</td>
+        <td>${price}</td>
+        <td><span class="star">★</span> ${rating}</td>
+        <td>
+          <button class="edit-btn" onclick="editRow(this)">Edit</button>
+          <button class="delete-btn" onclick="deleteRow(this)">Delete</button>
+        </td>
+      `;
+
+      productId++;
+      document.getElementById("productForm").reset();
+      document.getElementById("productForm").style.display = "none";
+    }
+
+    function deleteRow(btn) {
+      let row = btn.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+    }
+
+    function editRow(btn) {
+      let row = btn.parentNode.parentNode;
+      let titleCell = row.cells[2].innerText;
+      let subtitleCell = row.cells[3].innerText;
+      let priceCell = row.cells[4].innerText;
+      let ratingCell = row.cells[5].innerText.replace("★","").trim();
+
+      let newTitle = prompt("Edit Title:", titleCell);
+      let newSubtitle = prompt("Edit Subtitle:", subtitleCell);
+      let newPrice = prompt("Edit Price:", priceCell);
+      let newRating = prompt("Edit Rating (1-5):", ratingCell);
+
+      if(newTitle) row.cells[2].innerHTML = `<a href="${newTitle.toLowerCase()}.html">${newTitle}</a>`;
+      if(newSubtitle) row.cells[3].innerText = newSubtitle;
+      if(newPrice) row.cells[4].innerText = newPrice;
+      if(newRating) row.cells[5].innerHTML = `<span class="star">★</span> ${newRating}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pricing Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #444;
+      margin: 40px;
+      color: #333;
+    }
+    table {
+      border-collapse: collapse;
+      margin: auto;
+      text-align: center;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 15px;
+    }
+    th {
+      background: #f2f2f2;
+      font-size: 18px;
+    }
+    caption {
+      caption-side: top;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: white;
+    }
+    .starter { background: #66b3ff; color: #fff; }
+    .econo { background: #3399ff; color: #fff; }
+    .standard { background: #0066cc; color: #fff; }
+    .professional { background: #003d99; color: #fff; }
+    .price {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #eee;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    button:hover {
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <table>
+    <caption>Choose Your Plan</caption>
+    <tr>
+      <th>Plan</th>
+      <th class="starter">Starter<br><span class="price">$10</span><br>per month</th>
+      <th class="econo">Econo<br><span class="price">$30</span><br>per month</th>
+      <th class="standard">Standard<br><span class="price">$59</span><br>per month</th>
+      <th class="professional">Professional<br><span class="price">$99</span><br>per month</th>
+    </tr>
+    <tr>
+      <td>Amount of space</td>
+      <td>10GB</td>
+      <td>30GB</td>
+      <td>100GB</td>
+      <td>Unlimited</td>
+    </tr>
+    <tr>
+      <td>Bandwidth per month</td>
+      <td>100GB</td>
+      <td>200GB</td>
+      <td>500GB</td>
+      <td>1000GB</td>
+    </tr>
+    <tr>
+      <td>No. of e-mail accounts</td>
+      <td>1</td>
+      <td>10</td>
+      <td>50</td>
+      <td>Unlimited</td>
+    </tr>
+    <tr>
+      <td>No. of MySQL databases</td>
+      <td>1</td>
+      <td>10</td>
+      <td>50</td>
+      <td>Unlimited</td>
+    </tr>
+    <tr>
+      <td>24h Support</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Support tickets per mo.</td>
+      <td>1</td>
+      <td>3</td>
+      <td>5</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><form action="login.html"><button type="submit">Sign up!</button></form></td>
+      <td><form action="login.html"><button type="submit">Sign up!</button></form></td>
+      <td><form action="login.html"><button type="submit">Sign up!</button></form></td>
+      <td><form action="login.html"><button type="submit">Sign up!</button></form></td>
+    </tr>
+  </table>
+
+</body>
+</html>
